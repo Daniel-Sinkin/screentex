@@ -1,0 +1,5 @@
+[TYPECHECK]
+extension-pkg-allow-list=numpy,cv2,fitz
+
+[MESSAGES CONTROL]
+disable=c-extension-no-member,import-error
