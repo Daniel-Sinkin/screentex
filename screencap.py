@@ -18,7 +18,6 @@ from __future__ import annotations
 import argparse
 import itertools
 import subprocess
-import signal
 from datetime import datetime
 from multiprocessing import Event, Process
 from multiprocessing.synchronize import Event as EventT
