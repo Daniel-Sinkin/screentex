@@ -24,20 +24,20 @@ from multiprocessing.synchronize import Event as EventT
 from pathlib import Path
 from typing import Final, Iterator
 
-_EQUATIONS: Final[list[str]] = [
-    r"\int_{-\infty}^{\infty} e^{-x^{2}} \, dx = \sqrt{\pi}",
-    r"e^{i\pi} + 1 = 0",
-    r"\sum_{n=1}^{\infty} \frac{1}{n^{2}} = \frac{\pi^{2}}{6}",
-    r"\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}}",
-    r"\mathbf{F} = m\mathbf{a}",
-    r"\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e",
-    r"\frac{d}{dx}\sin x = \cos x",
-    r"\det(A) = \prod_{i}\lambda_i",
-    r"f(x) = \frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}",
-    r"\oint_{\partial \Sigma} \mathbf{B}\cdot d\mathbf{l} = \mu_{0} I",
+_LATEX_SNIPPETS: Final[list[str]] = [
+    r"\hat{y}=\sigma(Wx+b)",
+    r"L=\frac{1}{N}\sum_{i=1}^{N}(y_i-\hat{y}_i)^2",
+    r"p(z\mid x)=\frac{p(x\mid z)p(z)}{p(x)}",
+    r"\theta \leftarrow \theta-\eta\nabla_\theta L",
+    r"q(z) \approx p(z \mid x)",
+    r"\mathrm{ELBO}=\mathbb{E}_{q}[\log p(x,z)]-\mathbb{E}_{q}[\log q(z)]",
+    r"K(x_i,x_j)=\exp\left(-\frac{\|x_i-x_j\|^2}{2\sigma^2}\right)",
+    r"a^{(l)}=\mathrm{ReLU}(W^{(l)}a^{(l-1)}+b^{(l)})",
+    r"\text{softmax}(z)_k = \frac{e^{z_k}}{\sum_j e^{z_j}}",
+    r"f(x)=\mathrm{sign}(w^Tx+b)",
 ]
 
-_LATEX_CYCLE: Final[Iterator[str]] = itertools.cycle(_EQUATIONS)
+_LATEX_CYCLE: Final[Iterator[str]] = itertools.cycle(_LATEX_SNIPPETS)
 
 
 def take_screenshot(out_path: Path) -> None:
